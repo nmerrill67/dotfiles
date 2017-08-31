@@ -1,0 +1,19 @@
+#!/bin/bash
+
+screenfetch
+
+exec bash
+
+
+
+
+
+
+
+
+
+
+
+
+
+
