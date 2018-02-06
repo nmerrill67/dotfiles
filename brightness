@@ -2,11 +2,14 @@ dir=$1 # command line opt for direction
 
 b=`xrandr --verbose | grep -m 1 -i brightness | cut -f2 -d ' '`
 
-
-if [ $dir = -u ] # down
+if [ $dir = -u ] # up
 then
-	xrandr --output eDP-1-1 --brightness $(bc <<< "$b + 0.1")
-else # up
-        xrandr --output eDP-1-1 --brightness $(bc <<< "$b - 0.1")
+	if [ ${b%.*} -lt 1 ]; then
+		xrandr --output eDP-1-1 --brightness $(bc <<< "$b + 0.1")
+	fi
+else # down
+	dec=`echo $b | cut -f2 -d '.'`
+	if [ $dec -gt 0 ] || [ ${b%.*} -eq 1 ]; then
+        	xrandr --output eDP-1-1 --brightness $(bc <<< "$b - 0.1")
+	fi
 fi	
-
