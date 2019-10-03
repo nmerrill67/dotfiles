@@ -20,11 +20,11 @@ exec xset r rate 150 60
 exec_always --no-startup-id exec gnome-terminal -e "bash -c 'bash ~/.i3/gnome_terminal; exec bash'" #--role float
 #for_window [role="^float$" class="^gnome-terminal$"] floating enable
 
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.*
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 exec_always --no-startup-id nm-applet
 exec --no-startup-id compton -b
 exec --no-startup-id redshift
-exec --no-startup-id xrandr --output HDMI-1-1 --right-of eDP-1-1
+exec --no-startup-id xrandr --output HDMI-0 --right-of eDP-1-1
 
 #Font for window titles.
 font pango:FuraMonoForPowerline Nerd Font Regular 13
