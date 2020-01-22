@@ -101,7 +101,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+    source ~/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -116,9 +116,9 @@ if ! shopt -oq posix; then
 
 fi
 
-source /opt/ros/kinetic/setup.bash
+#source /opt/ros/kinetic/setup.bash
 #source ~/catkin_ws/devel/setup.bash
-export LD_LIBRARY_PATH=$LD_LIBRARY_PTH:/opt/ros/kinetic/lib/
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PTH:/opt/ros/kinetic/lib/
 
 
 #if [ -f ~/apollo/scripts/apollo_base.sh ]; then
@@ -127,10 +127,10 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PTH:/opt/ros/kinetic/lib/
 
 #source /opt/qt59/bin/qt59-env.sh
 
-export CUDA_HOME=/usr/local/cuda-9.0
-export CUDA_INSTALL_DIR=/usr/local/cuda-9.0
-export PATH=${CUDA_HOME}/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64/:/usr/local/cuda-9.0/targets/x86_64-linux/lib:/usr/local/cuda-9.0/bin:$LD_LIBRARY_PATH
+#export CUDA_HOME=/usr/local/cuda-9.0
+#export CUDA_INSTALL_DIR=/usr/local/cuda-9.0
+#export PATH=${CUDA_HOME}/bin${PATH:+:${PATH}}
+#export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64/:/usr/local/cuda-9.0/targets/x86_64-linux/lib:/usr/local/cuda-9.0/bin:$LD_LIBRARY_PATH
 
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
@@ -139,26 +139,31 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 bind '"\t":menu-complete' 
 export NO_AT_BRIDGE=1
 
-export PYTHONPATH=/home/nate/caffe/python:/home/nate/Libraries/pycuda-2017.1.1/pycuda:$PYTHONPATH
+#export PYTHONPATH=/home/nate/caffe/python:/home/nate/Libraries/pycuda-2017.1.1/pycuda:$PYTHONPATH
 
-export PYTHONPATH=/home/nate/git/GPU_GSPCA/build:$PYTHONPATH
-export PYTHONPATH=/home/nate/Libraries/pycuda-2017.1.1:$PYTHONPATH
+#export PYTHONPATH=/home/nate/git/GPU_GSPCA/build:$PYTHONPATH
+#export PYTHONPATH=/home/nate/Libraries/pycuda-2017.1.1:$PYTHONPATH
 
 # TF models
-TFM=/home/nate/Libraries/tensorflow/models/research
-export PYTHONPATH=$PYTHONPATH:$TFM:$TFM/slim:/home/nate/git/cocoapi/PythonAPI:/home/nate/git/Mask_RCNN
+#TFM=/home/nate/Libraries/tensorflow/models/research
+#export PYTHONPATH=$PYTHONPATH:$TFM:$TFM/slim:/home/nate/git/cocoapi/PythonAPI:/home/nate/git/Mask_RCNN
 
 if [[ $MOUSE_ID ]]; then 
 	fix_mouse
 fi
 
 
-export RPNG=rpng@192.168.1.24
-export RPNG_EDUROAM=rpng@128.175.195.20
+export RPNG=rpng@128.175.195.248
+export BRIGDES=nmerrill@bridges.psc.edu
+export XSEDE=nmerrill@login.xsede.org
 
-export PATH=$PATH:/opt/pgi/linux86-64/18.4/bin
+#export PATH=$PATH:/opt/pgi/linux86-64/18.4/bin
 
-export CUDA_VISIBLE_DEVICES=0
+#export CUDA_VISIBLE_DEVICES=0
 
-export Torch_DIR=/home/nate/anaconda3/lib/python3.7/site-packages/torch/share/cmake/Torch
+#export Torch_DIR=/home/nate/anaconda3/lib/python3.7/site-packages/torch/share/cmake/Torch
 
+source /opt/ros/melodic/setup.bash
+
+#default keyboard repeat is too slow for me
+xset r rate 150 60

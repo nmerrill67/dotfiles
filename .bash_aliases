@@ -4,7 +4,7 @@ alias ud_vpn='sudo openconnect vpn-chp.nss.udel.edu'
 alias ram='watch -n 5 free -m'
 alias clc='clear'
 
-MOUSE_ID=`xinput --list | grep -Po -m1 'Mouse.*id=[0-9]*'| grep -Po '[0-9]*'`
+#MOUSE_ID=`xinput --list | grep -Po -m1 'Mouse.*id=[0-9]*'| grep -Po '[0-9]*'`
 if [[ $MOUSE_ID ]]; then
 	alias fix_mouse='xinput --set-prop $MOUSE_ID "Device Accel Constant Deceleration" 2 && xinput --set-prop $MOUSE_ID "Device Accel Velocity Scaling" 2'
 fi
@@ -20,7 +20,7 @@ alias num-files='find .//. ! -name . -print | grep -c //'
 
 alias enhance='sudo function ne() { docker run --rm -v "$(pwd)/`dirname ${@:$#}`":/ne/input -it alexjc/neural-enhance ${@:1:$#-1} "input/`basename ${@:$#}`"; }; ne'
 
-alias violet='java -jar /usr/share/java/violetumleditor-2.1.0.jar'
+alias violet='java -jar /usr/share/java/violet-0.21.1.jar'
 
 alias suspend='systemctl suspend'
 
@@ -30,9 +30,7 @@ alias ssh372='ssh nmerrill@cisc372.cis.udel.edu'
 
 alias hoek='ssh nmerrill@hoek.eecis.udel.edu'
 
-alias sshrpng='ssh -X rpng@192.168.1.24'
-alias sshLrpng_eduroam='ssh -L 26006:127.0.0.1:6006 -X rpng@128.175.195.20'
-alias sshrpng_eduroam='ssh -X rpng@128.175.195.20'
+alias sshrpng='ssh -X rpng@128.175.195.248'
 alias sshLxsede='ssh -L 16006:127.0.0.1:6006 -X nmerrill@login.xsede.org'
 alias sshxsede='ssh -X nmerrill@login.xsede.org'
 alias sshyian='ssh nmerrill@yian.chem.udel.edu'
